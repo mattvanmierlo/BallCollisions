@@ -7,7 +7,7 @@ public class MainProgram extends JPanel {
     private Thread drawThread;
 
     public MainProgram(){
-        this.setPreferredSize(new Dimension(500,500));
+        this.setPreferredSize(new Dimension(1000,1000));
         this.setBackground(Color.white);
         this.add(new JLabel("Ball Collision Program"));
         this.setVisible(true);
@@ -50,7 +50,7 @@ public class MainProgram extends JPanel {
         // Making the JFrame here instead of a separate class
         JFrame mainFrameWindow = new JFrame("Ball Collisions");
         mainFrameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrameWindow.setPreferredSize(new Dimension(500,500));
+        mainFrameWindow.setPreferredSize(new Dimension(1000,1000));
         mainFrameWindow.add(new MainProgram());
         mainFrameWindow.pack();
         mainFrameWindow.setVisible(true);

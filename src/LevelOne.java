@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class LevelOne {
 
-    ArrayList<Ball> ballArrayList;
-    ArrayList<Enemy> enemyArrayList;
+    private ArrayList<Ball> ballArrayList;
+    private ArrayList<Enemy> enemyArrayList;
 
     public LevelOne(){
         ballArrayList = new ArrayList<>();
@@ -17,8 +17,8 @@ public class LevelOne {
     public void createBalls(){
         for(int i = 0; i < 20; i++){
             // Number between 0 and 500 (width of the screen)
-            int randX = (int) Math.floor(Math.random() * 501);
-            int randY = (int) Math.floor(Math.random() * 501);
+            int randX = (int) Math.floor(Math.random() * 1001);
+            int randY = (int) Math.floor(Math.random() * 1001);
             int randDx = ((int) Math.floor(Math.random() * 5)) - 2;
             int randDy = ((int) Math.floor(Math.random() * 5)) - 2;
             ballArrayList.add(new Ball(randX, randY, randDx, randDy));
@@ -28,8 +28,8 @@ public class LevelOne {
     public void createEnemies(){
         for(int j = 0; j < 20; j++){
             // Number between 0 and 500 (width of the screen)
-            int randX = (int) Math.floor(Math.random() * 501);
-            int randY = (int) Math.floor(Math.random() * 501);
+            int randX = (int) Math.floor(Math.random() * 1001);
+            int randY = (int) Math.floor(Math.random() * 1001);
             int randDx = ((int) Math.floor(Math.random() * 5)) - 2;
             int randDy = ((int) Math.floor(Math.random() * 5)) - 2;
             enemyArrayList.add(new Enemy(randX, randY, randDx, randDy));
@@ -44,11 +44,11 @@ public class LevelOne {
         //      the enemy lives on
         for(int i = 0; i < ballArrayList.size(); i++){
 
-            ballArrayList.get(i).updateLocation(500,500);
+            ballArrayList.get(i).updateLocation(1000,1000);
         }
 
         for(int i = 0; i < enemyArrayList.size(); i++){
-            enemyArrayList.get(i).updateLocation(500,500);
+            enemyArrayList.get(i).updateLocation(1000,1000);
         }
 
         ArrayList<Integer> indicesToRemove = new ArrayList<>();
