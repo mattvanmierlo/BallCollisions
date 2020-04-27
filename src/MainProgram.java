@@ -9,6 +9,7 @@ public class MainProgram extends JPanel {
     public MainProgram(){
         this.setPreferredSize(new Dimension(500,500));
         this.setBackground(Color.white);
+        this.add(new JLabel("Ball Collision Program"));
         this.setVisible(true);
         this.levelOne = new LevelOne();
         this.drawThread = new Worker();
