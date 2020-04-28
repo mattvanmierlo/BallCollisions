@@ -6,6 +6,7 @@ public class LevelOne {
 
     private ArrayList<Ball> ballArrayList;
     private ArrayList<Enemy> enemyArrayList;
+    public static final int WINDOW_SIZE = 500;
 
     public LevelOne(){
         ballArrayList = new ArrayList<>();
@@ -17,8 +18,8 @@ public class LevelOne {
     public void createBalls(){
         for(int i = 0; i < 20; i++){
             // Number between 0 and 500 (width of the screen)
-            int randX = (int) Math.floor(Math.random() * 1001);
-            int randY = (int) Math.floor(Math.random() * 1001);
+            int randX = (int) Math.floor(Math.random() * WINDOW_SIZE);
+            int randY = (int) Math.floor(Math.random() * WINDOW_SIZE);
             int randDx = ((int) Math.floor(Math.random() * 5)) - 2;
             int randDy = ((int) Math.floor(Math.random() * 5)) - 2;
             ballArrayList.add(new Ball(randX, randY, randDx, randDy));
@@ -28,8 +29,8 @@ public class LevelOne {
     public void createEnemies(){
         for(int j = 0; j < 20; j++){
             // Number between 0 and 500 (width of the screen)
-            int randX = (int) Math.floor(Math.random() * 1001);
-            int randY = (int) Math.floor(Math.random() * 1001);
+            int randX = (int) Math.floor(Math.random() * WINDOW_SIZE);
+            int randY = (int) Math.floor(Math.random() * WINDOW_SIZE);
             int randDx = ((int) Math.floor(Math.random() * 5)) - 2;
             int randDy = ((int) Math.floor(Math.random() * 5)) - 2;
             enemyArrayList.add(new Enemy(randX, randY, randDx, randDy));
@@ -44,11 +45,11 @@ public class LevelOne {
         //      the enemy lives on
         for(int i = 0; i < ballArrayList.size(); i++){
 
-            ballArrayList.get(i).updateLocation(1000,1000);
+            ballArrayList.get(i).updateLocation(WINDOW_SIZE,WINDOW_SIZE);
         }
 
         for(int i = 0; i < enemyArrayList.size(); i++){
-            enemyArrayList.get(i).updateLocation(1000,1000);
+            enemyArrayList.get(i).updateLocation(WINDOW_SIZE,WINDOW_SIZE);
         }
 
         ArrayList<Integer> indicesToRemove = new ArrayList<>();

@@ -7,6 +7,34 @@ public class Ball {
     private int dx;
     private int dy;
 
+    public Ball(int x, int y, int dx, int dy){
+        // Keep track of ball's position
+        this.x = x;
+        this.y = y;
+        // Keep track of ball's velocity
+        this.dx = dx;
+        this.dy = dy;
+    }
+
+    public void updateLocation(int xBound, int yBound){
+        this.x += this.dx;
+        this.y += this.dy;
+        if((this.x < 0 || this.x > xBound)){
+            this.dx *= -1;
+            this.x += this.dx * 2;
+        }
+        if((this.y < 0 || this.y > yBound)){
+            this.dy *= -1;
+            this.y += this.dy * 2;
+        }
+    }
+
+    public void drawBall(Graphics2D g2){
+        g2.setColor(Color.blue);
+        Ellipse2D.Double tempBall = new Ellipse2D.Double(x, y, SIZE, SIZE);
+        g2.fill(tempBall);
+    }
+
     public static int getSIZE() {
         return SIZE;
     }
@@ -45,31 +73,4 @@ public class Ball {
 
     public static final int SIZE = 10;
 
-    public Ball(int x, int y, int dx, int dy){
-        // Keep track of ball's position
-        this.x = x;
-        this.y = y;
-        // Keep track of ball's velocity
-        this.dx = dx;
-        this.dy = dy;
-    }
-
-    public void updateLocation(int xBound, int yBound){
-        this.x += this.dx;
-        this.y += this.dy;
-        if((this.x < 0 || this.x > xBound)){
-            this.dx *= -1;
-            this.x += this.dx * 2;
-        }
-        if((this.y < 0 || this.y > yBound)){
-            this.dy *= -1;
-            this.y += this.dy * 2;
-        }
-    }
-
-    public void drawBall(Graphics2D g2){
-        g2.setColor(Color.blue);
-        Ellipse2D.Double tempBall = new Ellipse2D.Double(x, y, SIZE, SIZE);
-        g2.fill(tempBall);
-    }
 }
